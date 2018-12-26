@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Keep Changing</title>
+    <description>Everything is Changing.</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 26 Dec 2018 11:49:32 +0800</pubDate>
+    <lastBuildDate>Wed, 26 Dec 2018 11:49:32 +0800</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>Java虚拟机内存理解</title>
+        <description>&lt;h1 id=&quot;今天是圣诞节&quot;&gt;今天是圣诞节&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;断断续续看了好几天《Java虚拟机》，看的过程中总是会分不太清虚拟机各个区域的作用。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;所以打算认真梳理一下虚拟机内存区域的划分和使用。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Wed, 26 Dec 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/12/26/Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98%E7%90%86%E8%A7%A3/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/26/Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98%E7%90%86%E8%A7%A3/</guid>
+        
+        <category>Life</category>
+        
+        
+      </item>
+    
+      <item>
+        <title>全新改变记录</title>
+        <description>&lt;h1 id=&quot;今天是圣诞节&quot;&gt;今天是圣诞节&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;参照原作者&lt;a href=&quot;https://www.jianshu.com/p/e68fba58f75c&quot;&gt;柏荧的文章&lt;/a&gt;搭建了这个个人博客，还没有确定好些什么。目前计划作为一个成长记录。写一些技术方面的学习历程和生活感悟。希望可以坚持下去。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;还没有下班，打算今天项目发版的，但由于对应项目的接口要明天才可以部署，所以可以预见的是  明天要加班了&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;回去路上我会看一下《Java虚拟机》，到家后要运动半小时。明天学一下Markdown的语法吧。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;今日份成长&lt;/strong&gt;&lt;/p&gt;
+  &lt;ul&gt;
+    &lt;li&gt;搭建了个人博客&lt;/li&gt;
+    &lt;li&gt;写下第一篇博客&lt;/li&gt;
+    &lt;li&gt;买了域名&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;所以  圣诞快乐！&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Tue, 25 Dec 2018 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2018/12/25/%E9%A6%96%E6%AC%A1%E4%BD%BF%E7%94%A8/</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/12/25/%E9%A6%96%E6%AC%A1%E4%BD%BF%E7%94%A8/</guid>
+        
+        <category>Life</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
