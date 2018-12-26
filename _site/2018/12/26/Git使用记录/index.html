@@ -10,7 +10,7 @@
     <meta name="keywords"  content="泽的博客, ze, 泽">
     <meta name="theme-color" content="#000000">
     
-    <title>泽(Ze)的博客</title>
+    <title>Git使用记录 - 泽(Ze)的博客</title>
 
     <!-- Web App Manifest -->
     <link rel="manifest" href="/pwa/manifest.json">
@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="canonical" href="http://localhost:4000/2018/12/26/Git%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -152,192 +152,193 @@
 </script>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/post-bg-desk3.jpg')">
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/img/home-bg.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: url('/img/home-bg.jpg')
+    }
+
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Keep Changing</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">保持热忱 自律自由</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#Git" title="Git">Git</a>
+                        
+                    </div>
+                    <h1>Git使用记录</h1>
+                    
+                    
+                    <h2 class="subheading">git简单操作问题记录</h2>
+                    
+                    <span class="meta">Posted by Ze on December 26, 2018</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<h1 id="git使用常见问题">Git使用常见问题</h1>
+
+<blockquote>
+  <p><strong>所有问题都是自己使用过程中的问题记录，操作不太熟练所以会有很多低级问题</strong></p>
+  <h4 id="查看文件变化">查看文件变化</h4>
+</blockquote>
+
+<blockquote>
+  <p>1.工作区与暂存区比较 git diff  filepath</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ git diff _posts/2018-12-25-首次使用.md
+<span class="gh">diff --git "a/_posts/2018-12-25-\351\246\226\346\254\241\344\275\277\347\224\250.md" "b/_posts/2018-12-25-\351\246\226\346\254\241\344\275\277\347\224\250.md"
+index 4b76e2a..962fa3f 100644
+</span><span class="gd">--- "a/_posts/2018-12-25-\351\246\226\346\254\241\344\275\277\347\224\250.md"
+</span><span class="gi">+++ "b/_posts/2018-12-25-\351\246\226\346\254\241\344\275\277\347\224\250.md"
+</span><span class="gu">@@ -1,5 +1,5 @@
+</span> ---
+<span class="gd">-layout:     post
+</span><span class="gi">+layout:     post1
+</span> title:      全新改变记录
+ subtitle:   第一天使用
+ date:       2018-12-25
+
+</code></pre></div>  </div>
+
+  <ol>
+    <li>工作区与HEAD ( 当前工作分支) 比较 git diff HEAD filepath</li>
+    <li>暂存区与HEAD比较 git diff –staged 或 –cached  filepath</li>
+    <li>当前分支的文件与branchName 分支的文件进行比较 git diff branchName filepath</li>
+    <li>与某一次提交进行比较 git diff commitId filepath</li>
+  </ol>
+</blockquote>
+
+<h4 id="使单个文件会退到指定版本">使单个文件会退到指定版本</h4>
+
+<blockquote>
+  <p>1.查看变更记录</p>
+
+  <p><code class="highlighter-rouge">$ git log _posts/2018-12-25-首次使用.md</code></p>
+
+  <p>结果：</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>commit e46da820a65460c505d3ddb7268129ad25312087
+Author: zhuzebing &lt;934039974@qq.com&gt;
+Date:   Tue Dec 25 19:50:47 2018 +0800
+    第一篇博客
+</code></pre></div>  </div>
+
+  <p>2.按照版本号回退到指定版本</p>
+
+  <p><code class="highlighter-rouge">$ git reset e46da820a65460c505d3ddb7268129ad25312087 _posts/2018-12-25-首次使用.md</code></p>
+
+  <p>结果：</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> Unstaged changes after reset:
+ M       _config.yml
+ M       _posts/2018-12-25-首次使用.md
+ M       about.html
+ D       img/BY_bolg_logo.png
+</code></pre></div>  </div>
+
+  <p>3.更新到工作目录</p>
+
+  <p><code class="highlighter-rouge">$ git checkout _posts/2018-12-25-首次使用.md</code></p>
+</blockquote>
+
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2018/12/25/%E9%A6%96%E6%AC%A1%E4%BD%BF%E7%94%A8/" data-toggle="tooltip" data-placement="top" title="全新改变记录">
+                        Previous<br>
+                        <span>全新改变记录</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2018/12/26/Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98%E7%90%86%E8%A7%A3/" data-toggle="tooltip" data-placement="top" title="Java虚拟机内存理解">
+                        Next<br>
+                        <span>Java虚拟机内存理解</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                <!--Gitalk评论start  -->
+                
+                <!-- Gitalk end -->
+
+                
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
         
 
-<!-- USE SIDEBAR -->
-    <!-- PostList Container -->
-    		<div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                postlist-container
-            ">
-    			
-<div class="post-preview">
-    <a href="/2018/12/26/Java%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%86%85%E5%AD%98%E7%90%86%E8%A7%A3/">
-        <h2 class="post-title">
-            Java虚拟机内存理解
-        </h2>
-        
-        <h3 class="post-subtitle">
-            挖坑中
-        </h3>
-        
-        <div class="post-content-preview">
-            Java虚拟机区域理解
-
-
-  断断续续看了好几天《Java虚拟机》，看的过程中总是会分不太清虚拟机各个区域的作用。
-
-
-
-  所以打算认真梳理一下虚拟机内存区域的划分和使用。
-
-
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Ze on December 26, 2018
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2018/12/26/Git%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">
-        <h2 class="post-title">
-            Git使用记录
-        </h2>
-        
-        <h3 class="post-subtitle">
-            git简单操作问题记录
-        </h3>
-        
-        <div class="post-content-preview">
-            Git使用常见问题
-
-
-  所有问题都是自己使用过程中的问题记录，操作不太熟练所以会有很多低级问题
-  查看文件变化
-
-
-
-  1.工作区与暂存区比较 git diff  filepath
-
-  $ git diff _posts/2018-12-25-首次使用.md
-diff --git "a/_posts/2018-12-25-\351\246\226\346\254\241\344\2...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Ze on December 26, 2018
-    </p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2018/12/25/%E9%A6%96%E6%AC%A1%E4%BD%BF%E7%94%A8/">
-        <h2 class="post-title">
-            全新改变记录
-        </h2>
-        
-        <h3 class="post-subtitle">
-            第一天使用
-        </h3>
-        
-        <div class="post-content-preview">
-            今天是圣诞节
-
-
-  参照原作者柏荧的文章搭建了这个个人博客，还没有确定好些什么。目前计划作为一个成长记录。写一些技术方面的学习历程和生活感悟。希望可以坚持下去。
-
-
-
-  还没有下班，打算今天项目发版的，但由于对应项目的接口要明天才可以部署，所以可以预见的是  明天要加班了
-
-
-
-  回去路上我会看一下《Java虚拟机》，到家后要运动半小时。明天学一下Markdown的语法吧。
-
-
-
-  ...
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Ze on December 25, 2018
-    </p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-
-    		</div>
     <!-- Sidebar Container -->
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <hr class="hidden-sm hidden-xs">
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
+        				
                             
-                        
-                    </div>
+        				
+        			</div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-                        
-                            <a href="/about">
-                                <img src="/img/about-BY-gentle.jpg"/>
-                            </a>
-                        
-                        
-                            <p>Goals determine what you going to be!</p>
-                        
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            <!-- add jianshu add target = "_blank" to <a> by BY -->
-                            
-                            
-                            
-                            
-                            
-                            
-                            
-                        </ul>
-                        
-                            <p>✉️ zhuthebing@gmail.com</p>
-                        
-                    </div>
-                </section>
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -350,10 +351,50 @@ diff --git "a/_posts/2018-12-25-\351\246\226\346\254\241\344\2...
                     
                 </ul>
                 
-    		</div>
-        
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        // BY Fix:去除标题前的‘#’ issues:<https://github.com/qiubaiying/qiubaiying.github.io/issues/137>
+        // anchors.options = {
+        //   visible: 'always',
+        //   placement: 'right',
+        //   icon: '#'
+        // };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
 
 
     <!-- Footer -->
@@ -479,6 +520,50 @@ diff --git "a/_posts/2018-12-25-\351\246\226\346\254\241\344\2...
 
 
 <!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
 
 
 
